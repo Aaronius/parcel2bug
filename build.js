@@ -2,7 +2,6 @@
 const path = require("path");
 const { default: Parcel, createWorkerFarm } = require('@parcel/core');
 const { NodeFS, MemoryFS } = require('@parcel/fs');
-const { default: defaultConfigContents } = require("@parcel/config-default");
 
 const bundle = async () => {
   const VIRTUAL_DIST_DIR = '/dist';
@@ -36,5 +35,4 @@ const bundle = async () => {
   await bundle();
   console.log('Starting second build.');
   await bundle();
-  console.log(bundleCode);
 })();
