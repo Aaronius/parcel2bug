@@ -3,10 +3,11 @@ const path = require("path");
 const { default: Parcel, createWorkerFarm } = require('@parcel/core');
 const { NodeFS, MemoryFS } = require('@parcel/fs');
 
+const VIRTUAL_DIST_DIR = '/dist';
+const workerFarm = createWorkerFarm();
+const inputFS = new NodeFS();
+
 const bundle = async () => {
-  const VIRTUAL_DIST_DIR = '/dist';
-  const workerFarm = createWorkerFarm();
-  const inputFS = new NodeFS();
   const outputFS = new MemoryFS(workerFarm);
   await outputFS.mkdirp(VIRTUAL_DIST_DIR);
 
@@ -26,7 +27,7 @@ const bundle = async () => {
 
     await bundler.run();
   } finally {
-    await workerFarm.end();
+    // await workerFarm.end();
   }
 }
 
