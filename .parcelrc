@@ -1,0 +1,15 @@
+{
+  "bundler": "@parcel/bundler-default",
+  "transformers": {
+    "*.js": ["@parcel/transformer-babel","@parcel/transformer-js"]
+  },
+  "runtimes": {
+    "browser": ["@parcel/runtime-js"]
+  },
+  "packagers": {
+    "*.js": "@parcel/packager-js"
+  },
+  "namers": ["@parcel/namer-default"],
+  "resolvers": ["@parcel/resolver-default"],
+  "reporters": ["@parcel/reporter-cli"]
+}
