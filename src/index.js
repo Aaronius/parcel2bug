@@ -1,1 +1,2 @@
-console.log("Hello world!");
+var postscribe = require('./postscribe');
+console.log(postscribe);

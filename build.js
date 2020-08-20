@@ -31,8 +31,8 @@ const bundle = async () => {
 }
 
 (async () => {
-  console.log('Starting first build.');
+  // console.log('Starting first build.');
   await bundle();
-  console.log('Starting second build.');
-  await bundle();
+  // console.log('Starting second build.');
+  // await bundle();
 })();
