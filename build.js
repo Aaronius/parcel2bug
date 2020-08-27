@@ -25,6 +25,8 @@ const bundle = async () => {
     });
 
     await bundler.run();
+  } catch (error) {
+    console.log('CODE HIGHLIGHTS', error.diagnostics[0].codeFrame.codeHighlights);
   } finally {
     await workerFarm.end();
   }
